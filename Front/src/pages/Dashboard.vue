@@ -104,6 +104,20 @@
             <h3 class="title">
               {{ this.info.ph }}
               <small>pH</small>
+              <br />
+              <div class="switch-div">
+                <small class="switch-desc">Activar filtro</small>
+                <md-switch
+                  type="checkbox"
+                  class="my-switch"
+                  v-model="this.info.filtro"
+                  @change="
+                    () => {
+                      this.info.filtro = !this.info.filtro;
+                    }
+                  "
+                />
+              </div>
             </h3>
           </template>
 
@@ -131,6 +145,20 @@
             <p class="category">Altura</p>
             <h3 class="title">
               {{ this.info.distancia / 100 }} <small>m</small>
+              <br />
+              <div class="switch-div">
+                <small class="switch-desc">Activar llenado</small>
+                <md-switch
+                  type="checkbox"
+                  class="my-switch"
+                  v-model="this.info.llenado"
+                  @change="
+                    () => {
+                      this.info.llenado = !this.info.llenado;
+                    }
+                  "
+                />
+              </div>
             </h3>
           </template>
         </stats-card>
@@ -151,6 +179,7 @@ export default {
     fetch("http://localhost:3000/get100Values/1")
       .then(res => res.json())
       .then(data => {
+        data = data[data.length - 1];
         this.info.ph = data.ph;
         this.info.temperatura = data.temperatura;
         this.info.distancia = data.distancia;
@@ -174,7 +203,9 @@ export default {
       info: {
         ph: null,
         temperatura: null,
-        movimiento: null
+        movimiento: null,
+        filtro: false,
+        llenado: false
       },
       dailySalesChart: {
         data: {
@@ -264,3 +295,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.switch-desc {
+  font-size: 12px !important;
+  margin-right: 10px;
+}
+.switch-div {
+  display: flex;
+  justify-content: flex-end;
+  /* align-content: center; */
+  align-items: center;
+}
+.my-switch {
+  margin: 10px 0 !important;
+}
+</style>
