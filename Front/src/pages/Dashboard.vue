@@ -61,6 +61,7 @@
           :chart-options="dataCompletedTasksChart.options"
           :chart-type="'Line'"
           data-background-color="orange"
+          ref="test"
         >
           <template slot="content">
             <h4 class="title">Clima</h4>
@@ -187,16 +188,52 @@ export default {
       })
       .then(() => console.log(this.info));
 
-    setInterval(() => {
-      fetch("http://localhost:3000/alert")
-        .then(res => res.json())
-        .then(data => {
-          // console.log(data);
-          if (data.alertMov) {
-            console.error("ALERTA");
+    fetch(
+      "https://api.openweathermap.org/data/2.5/onecall?lat=-33.44&lon=-71&appid=0aa2de9af3ac907af812454098343952&units=metric"
+    )
+      .then(res => res.json())
+      .then(data => {
+        const newTimes = data.hourly
+          .map(x => `${new Date(x.dt * 1000).getHours()}:00`)
+          .slice(0, 12);
+        const newWeather = data.hourly.map(x => x.temp).slice(0, 12);
+
+        this.dataCompletedTasksChart.data = {
+          labels: newTimes,
+          series: [newWeather]
+        };
+
+        const options = {
+          lineSmooth: this.$Chartist.Interpolation.cardinal({
+            tension: 0
+          }),
+          low: Math.min(newWeather) - 1,
+          high: Math.max(newWeather) + 1, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          chartPadding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
           }
-        });
-    }, 500);
+        };
+
+        console.log(this.$refs.test);
+        this.$refs.test.chartistInstance.update(
+          this.dataCompletedTasksChart.data,
+          options
+        );
+
+        // setInterval(() => {
+        //   fetch("http://localhost:3000/alert")
+        //     .then(res => res.json())
+        //     .then(data => {
+        //       // console.log(data);
+        //       if (data.alertMov) {
+        //         console.error("ALERTA");
+        //       }
+        //     });
+        // }, 500);
+      });
   },
   data() {
     return {
@@ -229,7 +266,7 @@ export default {
       dataCompletedTasksChart: {
         data: {
           labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
-          series: [[230, 750, 450, 300, 280, 240, 200, 190]]
+          series: [[0, 5, 15, 10, 20, 25, 30, 10]]
         },
 
         options: {
@@ -237,7 +274,7 @@ export default {
             tension: 0
           }),
           low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          high: 30, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,

@@ -69,7 +69,11 @@ export default {
      */
     initChart(Chartist) {
       var chartIdQuery = `#${this.chartId}`;
-      Chartist[this.chartType](chartIdQuery, this.chartData, this.chartOptions);
+      this.chartistInstance = Chartist[this.chartType](
+        chartIdQuery,
+        this.chartData,
+        this.chartOptions
+      );
     },
     /***
      * Assigns a random id to the chart
