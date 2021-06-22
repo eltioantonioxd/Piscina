@@ -154,7 +154,7 @@ export default {
         this.info.ph = data.ph;
         this.info.temperatura = data.temperatura;
         this.info.distancia = data.distancia;
-        this.movimiento = data.movimiento;
+        this.info.movimiento = data.movimiento;
       })
       .then(() => console.log(this.info));
 
@@ -162,7 +162,7 @@ export default {
       fetch("http://localhost:3000/alert")
         .then(res => res.json())
         .then(data => {
-          console.log(data);
+          // console.log(data);
           if (data.alertMov) {
             console.error("ALERTA");
           }
