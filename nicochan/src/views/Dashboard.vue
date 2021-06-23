@@ -207,8 +207,8 @@ export default {
           lineSmooth: this.$Chartist.Interpolation.cardinal({
             tension: 0
           }),
-          low: Math.min(newWeather) - 1,
-          high: Math.max(newWeather) + 1, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          low: Math.min(newWeather) - 2,
+          high: Math.max(newWeather) + 2, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,

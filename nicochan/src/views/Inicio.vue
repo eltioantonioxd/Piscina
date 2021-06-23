@@ -6,15 +6,15 @@
           <h4 class="text-light font-weight-bold">Nico chan</h4>
         </div>
         <div class="menu">
-          <a href="#" class="d-block py-3 text-light"
+          <a href="#" class="d-block py-3 text-light text-center"
             ><i class="icon ion-md-apps me-2 lead"></i>Tablero</a
           >
-          <a href="#" class="d-block py-3 text-light"
+          <a href="#" class="d-block py-3 text-light text-center"
             ><i class="icon ion-md-person me-2 lead"></i>Usuario</a
           >
         </div>
       </div>
-      <div class="w-100">
+      <div class="w-80 mx-auto">
         <nav
           class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
         >
@@ -34,7 +34,7 @@
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
                 <li class="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    class="nav-link dropdown-toggle "
                     href="#"
                     id="navbarDropdown"
                     role="button"
