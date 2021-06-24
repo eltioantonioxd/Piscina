@@ -21,6 +21,5 @@
 
 #nav.router-link-exact-active {
   color: #42b983;
-  padding: 1rem 2rem;
 }
 </style>

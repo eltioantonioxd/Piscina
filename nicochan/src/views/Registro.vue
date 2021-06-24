@@ -61,14 +61,14 @@
         <router-link
           to="/registro"
           v-if="!existeUsuario"
-          class="text-decoration-none"
+          class="text-decoration-none m-2"
           id="nav"
           >Crear</router-link
         >
         <router-link
           to="/acceso"
           v-if="!existeUsuario"
-          class="text-decoration-none"
+          class="text-decoration-none m-2"
           id="nav"
           >Ingresar</router-link
         >
