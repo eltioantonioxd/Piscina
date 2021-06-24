@@ -3,7 +3,7 @@
     <div class="d-flex">
       <div id="sidebar-container" class="bg-dark">
         <div class="logo">
-          <h4 class="text-light font-weight-bold">Nico chan</h4>
+          <h4 class="text-light font-weight-bold">PoolD</h4>
         </div>
         <div class="menu">
           <a href="#" class="d-block py-3 text-light text-center"
