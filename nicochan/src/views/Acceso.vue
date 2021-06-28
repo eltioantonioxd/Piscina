@@ -33,14 +33,14 @@
             </div>
             <button
               type="submit"
-              class="btn btn-outline-success mt-2 rounded-pill"
+              class="btn btn-outline-dark mt-2 rounded-pill"
             >
               Acceder
             </button>
           </form>
         </div>
       </div>
-      <div class="text-center">
+      <div class="text-center stilo">
         <router-link
           to="/registro"
           v-if="!existeUsuario"
@@ -97,7 +97,7 @@ body {
 }
 
 h1 {
-  color: #04c56f;
+  color: #036B98;
   padding-bottom: 0;
   padding-top: 16px;
   font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
@@ -106,6 +106,16 @@ h1 {
   line-height: 1.3333;
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.stilo{
+  display: flex;
+  height: 400px;
+  width: 200px;
+  background-color: #212529;
+  align-items: center;
+  justify-content: center;
+  opacity: .9;
 }
 
 .formulario {
@@ -147,7 +157,7 @@ h1 {
 .form__input:focus + .form__label {
   top: -0.5rem;
   left: 0.8rem;
-  color: #04c56f;
+  color: #036B98;
   font-size: 0.75rem;
   font-weight: 500;
   z-index: 10;
@@ -164,10 +174,10 @@ h1 {
 
 /*Input focus*/
 .form__input:focus {
-  border: 1.5px solid #04c56f;
+  border: 0.5px solid #036B98;
 }
 .btn {
-  border: 1px solid transparent;
-  border-color: #198754;
+  border: 0.5px solid transparent;
+  border-color: #036B98;
 }
 </style>

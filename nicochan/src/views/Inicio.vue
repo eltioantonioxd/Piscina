@@ -3,121 +3,29 @@
     <div class="d-flex">
       <div id="sidebar-container" class="bg-dark">
         <div class="logo">
-          <h4 class="text-light font-weight-bold">PoolD</h4>
+          <h4 class="text-light font-weight-bold text-center">PoolD</h4>
         </div>
         <div class="menu">
-          <a href="#" class="d-block py-3 text-light text-center"
-            ><i class="icon ion-md-apps me-2 lead"></i>Tablero</a
-          >
-          <a href="#" class="d-block py-3 text-light text-center"
-            ><i class="icon ion-md-person me-2 lead"></i>{{ usuario.email }}</a
+          <router-link to="/" class="d-block py-3 text-light ms-2"
+          id="nav"><i class="icon ion-md-apps me-2 lead"></i>Tablero</router-link>
+
+          <div  class="d-block py-3 text-light ms-2"
+            ><i class="icon ion-md-person me-2 lead"></i>{{ usuario.email }}</div
           >
           <a  href=""   @click="cerrarSesion"
                       v-if="existeUsuario"
-                      class="d-block py-3 text-light text-center">
-                      Cerrar Sesión   
+                      class="d-block py-3 text-light ms-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down me-2" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+  <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>Cerrar Sesión   
             </a>
         </div>
       </div>
-      <div class="w-80 mx-auto">
-        <nav
-          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
-        >
-          <div class="container">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </nav>
+      <div class="container-fluid mt-5">
+       
         <div id="content">
-          <!-- <section class="py-3">
-            <div class="container">
-              <div class="row">
-                <div class="col-9">
-                  <h1 class="text-primary">Bienvenid@</h1>
-                </div>
-                <div class="col-3 pt-3">
-                  <button class="btn btn-primary w-100 align-self-center">
-                    Revisa el clima!
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-          <div class="container">
-            <div class="row">
-              <article class="col-lg-4 col-md-6 card-effect mb-3 mb-md-0">
-                <div class="card">
-                  <img
-                    src="https://presenterse.com/wp-content/uploads/2020/02/agua-po.jpg"
-                    alt=""
-                    class="card-img card-img-filter"
-                  />
-                  <div
-                    class="card-img-overlay text-white d-flex flex-column justify-content-center text-center"
-                  >
-                    <h4>PH</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Iusto dolorem autem nemo sit unde laboriosam.
-                    </p>
-                    <a href="#" class="text-reset">Read more</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="row justify-content-center">
-              <article class="col-lg-4 col-md-6 card-effect mb-3 mb-md-0">
-                <div class="card">
-                  <img
-                    src="https://www.puntoseguro.com/blog/wp-content/uploads/2018/03/Asi-es-como-el-sol-protege-el-sol-de-enfermedades-como-la-gripe.jpg"
-                    alt=""
-                    class="card-img card-img-filter"
-                  />
-                  <div
-                    class="card-img-overlay text-white d-flex flex-column justify-content-center text-center"
-                  >
-                    <h4>que?</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Iusto dolorem autem nemo sit unde laboriosam.
-                    </p>
-                    <a href="#" class="text-reset">Read more</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="row justify-content-end">
-              <article class="col-lg-4 col-md-6 card-effect mt-md-4 mt-lg-0">
-                <div class="card">
-                  <img
-                    src="https://momentospiscina.com/blog/wp-content/uploads/2015/03/mantenimiento-de-piscinas-girona2.jpg"
-                    alt=""
-                    class="card-img card-img-filter"
-                  />
-                  <div
-                    class="card-img-overlay text-white d-flex flex-column justify-content-center text-center"
-                  >
-                    <h4>Pene</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Iusto dolorem autem nemo sit unde laboriosam.
-                    </p>
-                    <a href="#" class="text-reset">Read more</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div> -->
+          
           <dashboard />
         </div>
       </div>
