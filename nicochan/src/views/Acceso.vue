@@ -5,6 +5,7 @@
       <div class="row formulario text-center">
         <div class="col-12 pt-3">
           <h1>Bienvenido de vuelta!</h1>
+            <p class="mt-5 text-danger">{{ error }}</p>
         </div>
         <div class="col-12 text-center">
           <form
@@ -23,7 +24,7 @@
             </div>
             <div class="form__focus">
               <input
-                type="text"
+                type="password"
                 v-model="pass"
                 placeholder=" "
                 class="form-control form__input"
@@ -55,8 +56,8 @@
           id="nav"
           >Ingresar</router-link
         >
+        
       </div>
-      <p>{{ error }}</p>
     </div>
   </div>
 </template>

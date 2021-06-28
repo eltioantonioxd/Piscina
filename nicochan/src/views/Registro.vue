@@ -8,6 +8,7 @@
           <h1>Crear tu cuenta de PoolD</h1>
           <p class="lead">Comencemos!</p>
           <p>asegúrese de su correo electrónico para registrarse</p>
+          <p class="text-danger">{{ error }}</p>
         </div>
         <div class="col-12 text-center">
           <form
@@ -73,7 +74,7 @@
           >Ingresar</router-link
         >
       </div>
-      <p>{{ error }}</p>
+      
     </div>
   </div>
 </template>
