@@ -333,7 +333,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .switch-desc {
   font-size: 12px !important;
   margin-right: 10px;

@@ -1,8 +1,7 @@
 <template>
   <div>
     <div
-      class="container-fluid d-flex justify-content-center align-items-center"
-    >
+      class="container-fluid d-flex justify-content-center align-items-center">
       <div class="row formulario text-center">
         <div class="col-12 pt-3">
           <h1>Bienvenido de vuelta!</h1>
@@ -20,7 +19,7 @@
                 class="form-control form__input"
                 required
               />
-              <label for="" class="form__label">Ingrese contraseña</label>
+              <label for="" class="form__label">Ingrese correo</label>
             </div>
             <div class="form__focus">
               <input
@@ -83,9 +82,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 body {
-  background: #fff;
+  background-color: white !important;
   direction: ltr;
   font-size: 14px;
   line-height: 1.4286;
@@ -112,7 +111,6 @@ h1 {
 .formulario {
   width: 600px;
   height: 450px;
-  border-style: solid;
   border-color: #fff;
   padding: 0 2.5rem;
 }

@@ -93,7 +93,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @media screen and (max-width: 991px) {
   .alert {
     width: auto !important;

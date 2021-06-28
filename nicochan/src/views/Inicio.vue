@@ -10,8 +10,13 @@
             ><i class="icon ion-md-apps me-2 lead"></i>Tablero</a
           >
           <a href="#" class="d-block py-3 text-light text-center"
-            ><i class="icon ion-md-person me-2 lead"></i>Usuario</a
+            ><i class="icon ion-md-person me-2 lead"></i>{{ usuario.email }}</a
           >
+          <a  href=""   @click="cerrarSesion"
+                      v-if="existeUsuario"
+                      class="d-block py-3 text-light text-center">
+                      Cerrar Sesión   
+            </a>
         </div>
       </div>
       <div class="w-80 mx-auto">
@@ -30,31 +35,6 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle "
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    {{ usuario.email }}
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <button
-                      @click="cerrarSesion"
-                      v-if="existeUsuario"
-                      class="dropdown-item"
-                    >
-                      Cerrar Sesión
-                    </button>
-                  </ul>
-                </li>
-              </ul>
-            </div>
           </div>
         </nav>
         <div id="content">

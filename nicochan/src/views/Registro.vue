@@ -5,7 +5,7 @@
     >
       <div class="row formulario text-center">
         <div class="col-12 pt-3">
-          <h1>Crear tu cuenta de Nicochan</h1>
+          <h1>Crear tu cuenta de PoolD</h1>
           <p class="lead">Comencemos!</p>
           <p>asegúrese de su correo electrónico para registrarse</p>
         </div>
@@ -110,7 +110,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 body {
   background: #fff;
   direction: ltr;
@@ -139,7 +139,6 @@ h1 {
 .formulario {
   width: 600px;
   height: 450px;
-  border-style: solid;
   border-color: #fff;
   padding: 0 2.5rem;
 }
