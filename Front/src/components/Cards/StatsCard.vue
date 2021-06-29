@@ -1,6 +1,6 @@
 <template>
-  <md-card class="md-card-stats">
-    <md-card-header :data-background-color="dataBackgroundColor">
+  <md-card class="md-card-stats h-100">
+    <md-card-header :data-background-color="dataBackgroundColor" class="bg-dark">
       <slot name="header"></slot>
     </md-card-header>
 
@@ -8,9 +8,6 @@
       <slot name="content"></slot>
     </md-card-content>
 
-    <md-card-actions md-alignment="left">
-      <slot name="footer"></slot>
-    </md-card-actions>
   </md-card>
 </template>
 <script>
