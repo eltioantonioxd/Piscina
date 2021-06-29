@@ -59,10 +59,10 @@
                 <md-switch
                   type="checkbox"
                   class="my-switch"
-                  v-model="this.info.filtro"
-                  @change="
+                  v-model="info.filtro"
+                  @click="
                     () => {
-                      this.info.filtro = !this.info.filtro;
+                      info.filtro = !info.filtro;
                     }
                   "
                 />
@@ -92,7 +92,7 @@
 
           <template slot="content">
             <p class="category">Altura</p>
-            <h3 class="title">
+            <h3 class="title" v-if="info.distancia">
               {{ this.info.distancia / 100 }} <small>m</small>
               <br />
               <div class="switch-div">
@@ -100,10 +100,11 @@
                 <md-switch
                   type="checkbox"
                   class="my-switch"
-                  v-model="this.info.llenado"
-                  @change="
+                  v-model="info.llenado"
+                  @click="
                     () => {
-                      this.info.llenado = !this.info.llenado;
+                      console.log('lol');
+                      info.llenado = !info.llenado;
                     }
                   "
                 />
@@ -189,6 +190,7 @@ export default {
         ph: null,
         temperatura: null,
         movimiento: null,
+        distancia: null,
         filtro: false,
         llenado: false
       },
