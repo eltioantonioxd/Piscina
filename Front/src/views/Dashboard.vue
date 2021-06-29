@@ -1,5 +1,17 @@
 <template>
   <div class="content">
+    <div
+      class="alert alert-danger alert-dismissible fade show"
+      v-if="this.info.alerta"
+    >
+      CAIDA DETECTADA!!!!
+      <button
+        type="button"
+        class="btn-close ms-5"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
     <div class="md-layout">
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
@@ -172,16 +184,17 @@ export default {
           options
         );
 
-        // setInterval(() => {
-        //   fetch("http://localhost:3000/alert")
-        //     .then(res => res.json())
-        //     .then(data => {
-        //       // console.log(data);
-        //       if (data.alertMov) {
-        //         console.error("ALERTA");
-        //       }
-        //     });
-        // }, 500);
+        setInterval(() => {
+          fetch("http://localhost:3000/alert")
+            .then(res => res.json())
+            .then(data => {
+              // console.log(data);
+              if (data.alertMov) {
+                this.info.alerta = true;
+                console.error("ALERTA");
+              }
+            });
+        }, 500);
       });
   },
   data() {
@@ -192,7 +205,8 @@ export default {
         movimiento: null,
         distancia: null,
         filtro: false,
-        llenado: false
+        llenado: false,
+        alerta: false
       },
       dailySalesChart: {
         data: {
