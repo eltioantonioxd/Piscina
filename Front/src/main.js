@@ -14,14 +14,14 @@ import { auth } from "./firebase";
 
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log(user);
+    // console.log(user);
     const detectoUsuario = {
       email: user.email,
       uid: user.uid
     };
     store.dispatch("detectarUsuario", detectoUsuario);
   } else {
-    console.log(user);
+    // console.log(user);
     store.dispatch("detectarUsuario", user);
   }
   new Vue({

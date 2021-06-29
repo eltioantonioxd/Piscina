@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-100"
       >
@@ -39,7 +38,6 @@
             <p class="category">Temperatura</p>
             <h3 class="title">{{ this.info.temperatura }} °C</h3>
           </template>
-          
         </stats-card>
       </div>
       <div
@@ -135,8 +133,8 @@ export default {
         this.info.temperatura = data.temperatura;
         this.info.distancia = data.distancia;
         this.info.movimiento = data.movimiento;
-      })
-      .then(() => console.log(this.info));
+      });
+    // .then(() => console.log(this.info));
 
     fetch(
       "https://api.openweathermap.org/data/2.5/onecall?lat=-33.44&lon=-71&appid=0aa2de9af3ac907af812454098343952&units=metric"

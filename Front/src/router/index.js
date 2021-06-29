@@ -45,7 +45,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const usuario = auth.currentUser;
-    console.log(usuario);
+    // console.log(usuario);
     if (!usuario) {
       next({
         path: "/acceso"
@@ -57,7 +57,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-
 
 export default router;
