@@ -1,0 +1,14 @@
+version: "3.9"  
+services:
+    web:
+        image: rolitoxdd/tics-frontend
+        build: ./Front
+        ports:
+            - "8080:8080"
+        links:
+            - backend
+    backend:
+        image: rolitoxdd/tics-backend
+        build: ./Backend
+        ports:
+            - "3000:3000"
