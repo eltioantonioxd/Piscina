@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const SocketIO = require("socket.io");
 const port = 3000;
@@ -13,6 +14,7 @@ var contPhN = 10;
 var contAlturaP = 10;
 var contAlturaN = 10;
 
+app.use(cors({ origin: "https://www.tinkercad.com" }));
 app.get("/get100Values/:id", (req, res) => {
   res.json(lastEvent[req.params.id]);
 });
@@ -70,7 +72,7 @@ const server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-const io = SocketIO(server);
+const io = SocketIO(server, { cors: { origin: "https://www.tinkercad.com" } });
 
 io.on("connection", (socket) => {
   console.log("new connection", socket.id);
